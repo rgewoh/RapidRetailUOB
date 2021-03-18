@@ -139,9 +139,11 @@ include "header.php"; ?>
             if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                 while ($row = mysqli_fetch_assoc($result)) {
+                    $prod_id = $row["prod_id"];
                     $prod_title = $row["prod_title"];
                     $prod_price = $row["prod_price"];
                     $prod_image = $row["prod_image"];
+                    $link = "details.php?id=$prod_id";
 
             ?>
                     <div class="col-md-3 col-sm-6">
@@ -157,7 +159,7 @@ include "header.php"; ?>
                                 <div class="price">
                                     <span class="rupee-icon">₹</span> <?php echo $prod_price ?>
                                 </div>
-                                <a href="#" class="blue-btn">Add to cart</a>
+                                <a href="<?php echo $link; ?>" class="blue-btn">Add to cart</a>
                             </div>
                         </div>
                     </div>
