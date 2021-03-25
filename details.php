@@ -23,6 +23,7 @@ if (mysqli_num_rows($result) > 0) {
         $prod_image = $row["prod_image"];
         $prod_desc = $row["prod_desc"];
         $prod_price = $row["prod_price"];
+        $link = "code.addtocart.php?id=$prod_id";
     }
 } else {
     echo "0 results";
@@ -385,6 +386,8 @@ include "header.php"; ?>
                                                         <i class="ion-bag"></i>
                                                         <span class="list-cart-title cart-title" id="AddToCartText">Add to cart</span>
                                                     </button>
+
+                                                    <a class="add-to-cart ajax-spin-cart" href="<?php echo $link; ?>">Add to Cart</a>
                                                     <script>
                                                         jQuery('#AddToCart').click(function(e) {
                                                             e.preventDefault();
