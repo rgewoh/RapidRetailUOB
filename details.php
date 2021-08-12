@@ -43,449 +43,294 @@ include "header.php"; ?>
 
 
 <style>
-    .breadcrumb-list>li {
-        font-size: 14px;
-        list-style: none;
-        display: inline;
+    /* Single Product Details */
+
+    .single-product {
+        margin-top: 80px;
     }
 
-    .breadcrumb-list>li a:after {
-        content: "/";
-        vertical-align: middle;
-        margin: 0 5px;
-        color: #7a7a7a;
-    }
-
-    .action-wishlist:hover,
-    .action-wishlist:focus {
-        color: #fff;
-    }
-
-    .add-to-cart.action-wishlist {
-        width: 50px;
-        text-align: center;
+    .single-product .col-2 img {
         padding: 0;
     }
 
-    .add-to-cart.action-wishlist i {
-        margin-right: 0px;
+    .single-product .col-2 img {
+        padding: 20px;
     }
 
-    .product-add-to-cart .cart-title,
-    .product-add-to-cart .cart-title:hover,
-    .product-list-action .cart-title,
-    .product-list-action .cart-title:hover {
-        background-color: transparent;
-        border-bottom: none;
-        color: inherit;
-    }
-
-    .product-add-to-cart .pro-add-btn i,
-    .product-list-action .pro-add-btn i {
-        margin-right: 10px;
-        font-size: 18px;
-    }
-
-    .add-to-cart {
-        display: inline-block;
-    }
-
-    .action-wishlist:hover,
-    .action-wishlist:focus {
-        color: #fff;
-    }
-
-    .add-to-cart.action-wishlist i {
-        margin-right: 0px;
-    }
-
-    .product-add-to-cart {
-        float: none;
-    }
-
-    .single-product-wishlist {
-        display: inline-block;
-        position: relative;
-        margin-left: 20px;
-    }
-
-    .product-thumbnail .owl-nav {
-        display: none;
-    }
-
-    .breadcrumb-area {
-        padding: 30px 0;
-        background-color: #f3f3f3;
-    }
-
-    .breadmome-name {
-        color: #ff6a00;
-        font-size: 24px;
-        font-weight: 500;
-        text-transform: capitalize;
-        margin: 0 0 18px;
-    }
-
-    .breadcrumb-content>ul>li {
-        display: inline-block;
-        list-style: none;
-        position: relative;
-        font-size: 14px;
-        color: #333;
-    }
-
-    .breadcrumb-content>ul>li.active {
-        color: #ff6a00;
-    }
-
-    .breadcrumb-content>ul>li:after {
-        content: "/";
-        vertical-align: middle;
-        margin: 0 5px;
-        color: #7a7a7a;
-    }
-
-    .breadcrumb-content>ul>li:last-child:after {
-        display: none;
-    }
-
-    .mt-80 {
-        margin-top: 80px
-    }
-
-    .mb-80 {
-        margin-bottom: 80px
-    }
-
-    .single-product-name {
+    .single-product h4 {
+        margin-top: 20px 0;
         font-size: 22px;
-        text-transform: capitalize;
-        font-weight: 900;
-        color: #444;
-        line-height: 24px;
-        margin-bottom: 15px;
+        font-weight: bold;
     }
 
-    .single-product-reviews {
-        margin-bottom: 10px;
-    }
-
-    .single-product-price {
-        margin-top: 25px;
-    }
-
-    .single-product-action {
-        margin-top: 30px;
-        padding-bottom: 30px;
-        border-top: 1px solid #ebebeb;
-        border-bottom: 1px solid #ebebeb;
-        float: left;
-        width: 100%;
-    }
-
-    .product-discount {
-        display: inline-block;
-        margin-bottom: 20px;
-    }
-
-    .product-discount span.price {
-        font-size: 28px;
-        font-weight: 900;
-        line-height: 30px;
-        display: inline-block;
-        color: #008bff;
-    }
-
-    .product-info {
-        color: #333;
-        font-size: 14px;
-        font-weight: 400;
-    }
-
-    .product-info p {
-        line-height: 30px;
-        font-size: 14px;
-        color: #333;
-        margin-top: 30px;
-    }
-
-    .product-add-to-cart span.control-label {
+    .single-product select {
         display: block;
-        margin-bottom: 10px;
-        text-transform: capitalize;
-        color: #232323;
-        font-size: 14px;
+        padding: 10px;
+        margin-top: 20px;
     }
 
-    .product-add-to-cart {
-        overflow: hidden;
-        margin: 20px 0px;
-        float: left;
-        width: 100%;
-    }
-
-    .cart-plus-minus-box {
-        border: 1px solid #e1e1e1;
-        border-radius: 0;
-        color: #3c3c3c;
-        height: 49px;
-        text-align: center;
+    .single-product input {
         width: 50px;
-        padding: 5px 10px;
+        height: 40px;
+        padding-left: 10px;
+        font-size: 20px;
+        margin-right: 10px;
+        border: 1px solid #ff523b;
     }
 
-    .product-add-to-cart .cart-plus-minus {
-        margin-right: 25px;
+    input:focus {
+        outline: none;
     }
 
-    .cart-plus-minus {
-        position: relative;
-        width: 75px;
-        float: left;
-        padding-right: 25px;
+    .single-product .fa {
+        color: #ff523b;
+        margin-left: 10px;
     }
 
-    .add-to-cart {
-        background: #008bff;
-        border: 0;
-        border-bottom: 3px solid #0680e5;
-        color: #fff;
-        box-shadow: none;
-        padding: 0 30px;
-        border-radius: 3px;
-        font-weight: 400;
+    .small-img-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .small-img-col {
+        flex-basis: 24%;
         cursor: pointer;
-        font-size: 14px;
-        text-transform: capitalize;
-        height: 50px;
-        line-height: 50px;
-    }
-
-    .add-to-cart:hover {
-        background: #ff6a00;
-        border-color: #e96405;
     }
 </style>
 
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Deatils at Rapid Retail</title>
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
+<body>
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+    <div class="container">
 
-<link href="http://cdn.shopify.com/s/files/1/0067/5617/1846/t/2/assets/timber.scss.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" rel="stylesheet" type="text/css" media="all" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" rel="stylesheet" type="text/css" />
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/jquery.elevatezoom.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-<div class="wrapper">
-    <div class="breadcrumb-wrapper">
-        <div class="breadcrumb-area breadcrumbs overlay-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="breadcrumb-content text-center">
-                            <h1 class="breadmome-name breadcrumbs-title">Lorem Ipsum is simply dummy text</h1>
-                            <nav class="" role="navigation" aria-label="breadcrumbs">
-                                <ul class="breadcrumb-list">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Sport & Outdoor</a><span>Lorem Ipsum is simply dummy text</span></li>
-                                </ul>
-                            </nav>
-                        </div>
+        <div class="navbar">
+
+            <div class="logo">
+
+                <img src="images/logo.png" width="150px">
+            </div>
+
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Account</a></li>
+                </ul>
+            </nav>
+            <img src="images/cart.png" width="30px" height="30px">
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <!-- Single Product Details -->
+
+    <div class="conatiner-sm single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/product-5.jpg" width="60%" id="ProductImg">
+
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="images/product-5.jpg" width="60%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/product-5-1.jpg" width="60%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/product-5-2.jpg" width="60%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/product-5-3.jpg" width="60%" class="small-img">
                     </div>
                 </div>
+
+            </div>
+            <div class="col-2">
+                <p>Major White / Range</p>
+                <h1>Frigidaire FFEF3054TS 30 Inch Electric Freestanding Range</h1>
+                <h4>$8999.00</h4>
+                <select>
+                    <option>Select Delivery Option</option>
+                    <option>Same Day</option>
+                    <option>Next Day</option>
+                    <option>Future Delivery</option>
+                </select>
+                <input type="number" value="1">
+                <a href="" class="btn">Add to Cart</a>
+
+                <h3>Product Details <i class="fa fa-indent"></i></h3>
+                <br>
+                <p> • 5.3 Cu. Ft Self Cleaning Oven <br>
+                    • 5 Elements / 6 in. - 12 in. / 100 - 3000 Watts <br>
+                    • Even Baking Technology / Keep Warm Zone <br>
+                    • Dimensions (WHD): 30 X 47.8 X 28.4 in.
+                </p>
             </div>
         </div>
     </div>
-    <main>
-        <div id="shopify-section-product-template" class="shopify-section">
-            <div class="single-product-area mt-80 mb-80">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="product-details-large" id="ProductPhoto">
-                                <img id="ProductPhotoImg" class="product-zoom" data-image-id="" alt="12. Aliexpress dropshipping by oberlo" data-zoom-image="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/36_1024x1024.jpg?v=1544416552" src="<?php echo $prod_image; ?>">
 
-                            </div>
-                            <div id="ProductThumbs" class="product-thumbnail owl-carousel">
-                                <a class="product-single__thumbnail active" href="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/36_1024x1024.jpg?v=1544416552" data-image="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/36_1024x1024.jpg?v=1544416552" data-zoom-image="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/36_1024x1024.jpg?v=1544416552" data-image-id="6995357106246">
-                                    <img src="<?php echo $prod_image; ?>" alt="12. Aliexpress dropshipping by oberlo"></a>
+    <!-- Title -->
+    <div class="container-sm">
+        <div class="row row-2">
+            <h2>Related Products</h2>
+            <p>View More</p>
+        </div>
+    </div>
 
-                                <a class="product-single__thumbnail " href="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/40_1024x1024.jpg?v=1544416552" data-image="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/40_1024x1024.jpg?v=1544416552" data-zoom-image="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/40_1024x1024.jpg?v=1544416552" data-image-id="6995358023750">
-                                    <img src="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/40_compact.jpg?v=1544416552" alt="12. Aliexpress dropshipping by oberlo"></a>
+    <div class="container-sm">
 
-                                <a class="product-single__thumbnail " href="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/37_1024x1024.jpg?v=1544416552" data-image="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/37_1024x1024.jpg?v=1544416552" data-zoom-image="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/37_1024x1024.jpg?v=1544416552" data-image-id="6995357302854">
-                                    <img src="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/37_compact.jpg?v=1544416552" alt="12. Aliexpress dropshipping by oberlo"></a>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/product-5.jpg">
+                <h4>Frigidaire FFEF3054TS 30 Inch Electric Freestanding Range with 5 Elements, Smoothtop Cooktop, 5.3
+                    cu. ft. Primary Oven Capacity, in Stainless Steel</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>$8999.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-6.jpg">
+                <h4>Cuisinart TOA-60BKS Convection Toaster Oven Airfryer, Black Stainless Steel</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$1399.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-7.jpg">
+                <h4>Sauder Palladia Armoire, Select Cherry finish</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$2199.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-8.jpg">
+                <h4>Decok Vanity Desk with 5 Drawers & Cushioned Stool, Black Makeup Vanity with Adjustable HD Mirror &
+                    Removable Makeup Organizer, for Corner Bedroom</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$899.00</p>
+            </div>
+        </div>
 
-                                <a class="product-single__thumbnail " href="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/38_1024x1024.jpg?v=1544416552" data-image="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/38_1024x1024.jpg?v=1544416552" data-zoom-image="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/38_1024x1024.jpg?v=1544416552" data-image-id="6995357532230">
-                                    <img src="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/38_compact.jpg?v=1544416552" alt="12. Aliexpress dropshipping by oberlo"></a>
+    </div>
 
-                                <a class="product-single__thumbnail " href="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/39_1024x1024.jpg?v=1544416552" data-image="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/39_1024x1024.jpg?v=1544416552" data-zoom-image="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/39_1024x1024.jpg?v=1544416552" data-image-id="6995357728838">
-                                    <img src="http://cdn.shopify.com/s/files/1/0067/5617/1846/products/39_compact.jpg?v=1544416552" alt="12. Aliexpress dropshipping by oberlo"></a>
+    <!-- Footer -->
 
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="single-product-content">
-                                <form method="post" id="AddToCartForm" accept-charset="UTF-8" class="shopify-product-form" enctype="multipart/form-data">
-                                    <input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-                                    <div class="product-details">
-                                        <h1 class="single-product-name"><?php echo $prod_title; ?></h1>
-                                        <div class="single-product-reviews">
-                                            <span class="shopify-product-reviews-badge" data-id="1912078270534"></span>
-                                        </div>
-                                        <div class="product-sku">SKU: <span class="variant-sku">YQT71020193</span></div>
-                                        <div class="single-product-price">
-                                            <div class="product-discount"><span class="price" id="ProductPrice"><span class=money>$<?php echo $prod_price; ?></span></span></div>
-                                        </div>
-                                        <div class="product-info"><?php echo $prod_desc; ?></div>
-
-                                        <div class="single-product-action">
-                                            <div class="product-variant-option">
-                                                <select name="id" id="productSelect" class="product-single__variants" style="display:none;">
-                                                    <option selected="selected" data-sku="YQT71020193" value="19506517377094">Default Title - <span class=money>$20.66 USD</span></option>
-
-                                                </select>
-                                                <script>
-                                                    jQuery(function() {
-                                                        jQuery('.swatch :radio').change(function() {
-                                                            var optionIndex = jQuery(this).closest('.swatch').attr('data-option-index');
-                                                            var optionValue = jQuery(this).val();
-                                                            jQuery(this)
-                                                                .closest('form')
-                                                                .find('.single-option-selector')
-                                                                .eq(optionIndex)
-                                                                .val(optionValue)
-                                                                .trigger('change');
-                                                        });
-                                                    });
-                                                </script>
-                                            </div>
-                                            <style>
-                                                .product-variant-option .selector-wrapper {
-                                                    display: none;
-                                                }
-                                            </style>
-                                            <div class="product-add-to-cart">
-                                                <span class="control-label">Quantity</span>
-                                                <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" type="text" name="quantity" value="1">
-                                                </div>
-                                                <div class="add">
-                                                    <button type="submit" class="add-to-cart ajax-spin-cart" id="AddToCart">
-                                                        <i class="ion-bag"></i>
-                                                        <span class="list-cart-title cart-title" id="AddToCartText">Add to cart</span>
-                                                    </button>
-
-                                                    <a class="add-to-cart ajax-spin-cart" href="<?php echo $link; ?>">Add to Cart</a>
-                                                    <script>
-                                                        jQuery('#AddToCart').click(function(e) {
-                                                            e.preventDefault();
-                                                            Shopify.addItemFromFormStart('AddToCartForm', 1912078270534);
-                                                        });
-                                                    </script>
-
-                                                    <div class="single-product-wishlist">
-                                                        <a class="add-to-cart action-wishlist wishlist" href="#" title="Wishlist"><i class="fa fa-heart"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="secure-payment"><img src="http://cdn.shopify.com/s/files/1/0067/5617/1846/files/guaranteed_safe_checkout1.png?v=1545216773"></div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>App Available for Android and IOS.</p>
+                    <div class="app-logo">
+                        <img src="images/playstore.png">
+                        <img src="images/appstore.png">
                     </div>
                 </div>
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png">
+                    <p>We Work Towards Providing The Best Products And Customer Service Affordable!</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate Program</li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
             </div>
-            <style type="text/css">
-                .product-details .countdown-timer-wrapper {
-                    display: none !important;
-                }
-            </style>
-
-            <script>
-                $(document).ready(function() {
-                    $('.fancybox').fancybox();
-                });
-            </script>
-            <script>
-                function productZoom() {
-                    $(".product-zoom").elevateZoom({
-                        gallery: 'ProductThumbs',
-                        galleryActiveClass: "active",
-                        zoomType: "inner",
-                        cursor: "crosshair"
-                    });
-                    $(".product-zoom").on("click", function(e) {
-                        var ez = $('.product-zoom').data('elevateZoom');
-                        $.fancybox(ez.getGalleryList());
-                        return false;
-                    });
-
-                };
-
-                function productZoomDisable() {
-                    if ($(window).width() < 767) {
-                        $('.zoomContainer').remove();
-                        $(".product-zoom").removeData('elevateZoom');
-                        $(".product-zoom").removeData('zoomImage');
-                    } else {
-                        productZoom();
-                    }
-                };
-
-                productZoomDisable();
-
-                $(window).resize(function() {
-                    productZoomDisable();
-                });
-            </script>
-            <script>
-                $('.product-thumbnail').owlCarousel({
-                    loop: true,
-                    center: true,
-                    nav: true,
-                    dots: false,
-                    margin: 10,
-                    autoplay: false,
-                    autoplayTimeout: 5000,
-                    navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-                    item: 3,
-                    responsive: {
-                        0: {
-                            items: 2
-                        },
-                        480: {
-                            items: 3
-                        },
-                        992: {
-                            items: 3,
-                        },
-                        1170: {
-                            items: 3,
-                        },
-                        1200: {
-                            items: 3
-                        }
-                    }
-                });
-            </script>
+            <hr>
+            <p class="copyright">Copyright 2021 - Randall Howe SN2018271</p>
         </div>
-    </main>
-</div>
+    </div>
 
+
+    <!-- Menu -->
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+    <!-- js for product gallery -->
+    <script>
+        var ProductImg = document.getElementById("ProductImg");
+        var SmallImg = document.getElementsByClassName("small-img");
+
+        SmallImg[0].onclick = function() {
+            ProductImg.src = SmallImg[0].src;
+        }
+        SmallImg[1].onclick = function() {
+            ProductImg.src = SmallImg[1].src;
+        }
+        SmallImg[2].onclick = function() {
+            ProductImg.src = SmallImg[2].src;
+        }
+        SmallImg[3].onclick = function() {
+            ProductImg.src = SmallImg[3].src;
+        }
+    </script>
+
+</body>
+
+</html>
 
 
 
