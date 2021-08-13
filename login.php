@@ -61,7 +61,7 @@ include "header.php"; ?>
     <style>
         body {
             color: #999;
-            background: radial-gradient(#fff, #d6e0ff);
+            background: #19aa8d;
             font-family: 'Varela Round', sans-serif;
         }
 
@@ -167,7 +167,7 @@ include "header.php"; ?>
 
 <body>
     <div class="login-form">
-        <form action="/examples/actions/confirmation.php" method="post">
+        <form action="homepage.php" method="post">
             <div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
             <h4 class="modal-title">Login to Your Account</h4>
             <div class="form-group">

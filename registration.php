@@ -5,14 +5,15 @@ if (isset($_POST["registration"])) {
 
     include "connection.php";
 
-    $first_name = $_POST["first_name"];
-    $last_name = $_POST["last_name"];
+    $fname = $_POST["fname"];
+    $lname = $_POST["lname"];
+    $username = $_POST["username"];
     $email = $_POST["email"];
     $password = $_POST["password"];
 
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `reg_date`, `user_type`) VALUES (NULL, '$first_name', '$last_name', '$email', '$password', current_timestamp(), 'user');";
+    $sql = "INSERT INTO `users` (`user_id`, `fname`, `lname`, `username`, `email`, `password`, `reg_date`) VALUES (NULL, '$fname', '$lname', '$username','$email', '$password', current_timestamp(), 'user');";
 
     if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";
@@ -31,7 +32,7 @@ include "header.php"; ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
-    <title>Bootstrap Sign up Form with Icons</title>
+    <title>Registration Form</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -40,7 +41,7 @@ include "header.php"; ?>
     <style>
         body {
             color: #fff;
-            background: radial-gradient(#fff, #d6e0ff);
+            background: #19aa8d;
             font-family: 'Roboto', sans-serif;
         }
 
@@ -60,7 +61,7 @@ include "header.php"; ?>
         }
 
         .signup-form {
-            width: 400px;
+            width: 500px;
             margin: 0 auto;
             padding: 30px 0;
         }
@@ -155,10 +156,30 @@ include "header.php"; ?>
 
 <body>
     <div class="signup-form">
-        <form action="/examples/actions/confirmation.php" method="post">
+        <form action="homepage.php" method="post">
             <h2>Sign Up</h2>
             <p>Please fill in this form to create an account!</p>
             <hr>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <span class="fa fa-user"></span>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" name="fname" placeholder="First Name" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <span class="fa fa-user"></span>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" name="lname" placeholder="Last Name" required="required">
+                </div>
+            </div>
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -204,10 +225,10 @@ include "header.php"; ?>
                 <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="termsofuse.php">Terms of Use</a> &amp; <a href="privacy.php">Privacy Policy</a></label>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                <button type="submit" name="registration" class="btn btn-primary btn-lg">Sign Up</button>
             </div>
         </form>
-        <div class="text-center">Already have an account? <a href="login.php">Login here</a></div>
+        <div class="text-center">Already have an account? <a href="login.php">Login Here</a></div>
     </div>
 </body>
 

@@ -397,7 +397,7 @@ include "header.php"; ?>
                     <h1>COMFEE' Portable Washing Machine</h1>
                     <small>0.9 cu.ft Compact Washer With LED Display, 5 Wash Cycles, 2 Built-in Rollers, Space Saving
                         <br> Washer, Ideal Laundry for RV, Dorm, Apartment, Magnetic Gray</small> <br>
-                    <a href="" class="btn">BUY NOW &#8594;</a>
+                    <a href="login.php" class="btn">BUY NOW &#8594;</a>
                 </div>
             </div>
         </div>
