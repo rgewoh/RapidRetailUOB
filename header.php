@@ -76,12 +76,14 @@
                 </div>
 
                 <nav>
+
                     <ul id="MenuItems">
                         <li><a href="homepage.php">Home</a></li>
                         <li><a href="store.php">Products</a></li>
                         <li><a href="about.php">About</a></li>
                         <li><a href="contact.php">Contact</a></li>
                         <li><a href="myaccount.php">Account</a></li>
+                        <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </nav>
                 <a href="cart.php"><img src="images/cart.png" width="30px" height="30px"></a>

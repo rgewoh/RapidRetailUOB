@@ -1,30 +1,3 @@
-<?php
-
-//check if button was clicked
-if (isset($_POST["registration"])) {
-
-    include "connection.php";
-
-    $fname = $_POST["fname"];
-    $lname = $_POST["lname"];
-    $username = $_POST["username"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-
-    $password = password_hash($password, PASSWORD_DEFAULT);
-
-    $sql = "INSERT INTO `users` (`user_id`, `fname`, `lname`, `username`, `email`, `password`, `reg_date`) VALUES (NULL, '$fname', '$lname', '$username','$email', '$password', current_timestamp(), 'user');";
-
-    if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-
-    mysqli_close($conn);
-}
-include "header.php"; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,198 +13,118 @@ include "header.php"; ?>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <style>
         body {
-            color: #fff;
-            background: #19aa8d;
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, Sans-Serif;
         }
 
-        .form-control {
-            font-size: 15px;
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
         }
 
-        .form-control,
-        .form-control:focus,
-        .input-group-text {
-            border-color: #e1e1e1;
+        .clearfix:after {
+            clear: both;
         }
 
-        .form-control,
-        .btn {
-            border-radius: 3px;
+        a {
+            color: #0067ab;
+            text-decoration: none;
         }
 
-        .signup-form {
-            width: 500px;
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .form {
+            width: 300px;
             margin: 0 auto;
-            padding: 30px 0;
         }
 
-        .signup-form form {
-            color: #999;
-            border-radius: 3px;
-            margin-bottom: 15px;
-            background: #fff;
-            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-            padding: 30px;
-        }
-
-        .signup-form h2 {
+        input[type='text'],
+        input[type='email'],
+        input[type='password'] {
+            width: 200px;
+            border-radius: 2px;
+            border: 1px solid #CCC;
+            padding: 10px;
             color: #333;
-            font-weight: bold;
-            margin-top: 0;
+            font-size: 14px;
+            margin-top: 10px;
         }
 
-        .signup-form hr {
-            margin: 0 -30px 20px;
-        }
-
-        .signup-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .signup-form label {
-            font-weight: normal;
-            font-size: 15px;
-        }
-
-        .signup-form .form-control {
-            min-height: 38px;
-            box-shadow: none !important;
-        }
-
-        .signup-form .input-group-addon {
-            max-width: 42px;
-            text-align: center;
-        }
-
-        .signup-form .btn,
-        .signup-form .btn:active {
-            font-size: 16px;
-            font-weight: bold;
-            background: #19aa8d !important;
-            border: none;
-            min-width: 140px;
-        }
-
-        .signup-form .btn:hover,
-        .signup-form .btn:focus {
-            background: #179b81 !important;
-        }
-
-        .signup-form a {
+        input[type='submit'] {
+            padding: 10px 25px 8px;
             color: #fff;
-            text-decoration: underline;
-        }
-
-        .signup-form a:hover {
-            text-decoration: none;
-        }
-
-        .signup-form form a {
-            color: #19aa8d;
-            text-decoration: none;
-        }
-
-        .signup-form form a:hover {
-            text-decoration: underline;
-        }
-
-        .signup-form .fa {
-            font-size: 21px;
-        }
-
-        .signup-form .fa-paper-plane {
+            background-color: #0067ab;
+            text-shadow: rgba(0, 0, 0, 0.24) 0 1px 0;
             font-size: 18px;
+            box-shadow: rgba(255, 255, 255, 0.24) 0 2px 0 0 inset, #fff 0 1px 0 0;
+            border: 1px solid #0164a5;
+            border-radius: 2px;
+            margin-top: 10px;
+            cursor: pointer;
         }
 
-        .signup-form .fa-check {
-            color: #fff;
-            left: 17px;
-            top: 18px;
-            font-size: 7px;
-            position: absolute;
+        input[type='submit']:hover {
+            background-color: #024978;
         }
     </style>
 </head>
 
 <body>
-    <div class="signup-form">
-        <form action="homepage.php" method="post">
-            <h2>Sign Up</h2>
-            <p>Please fill in this form to create an account!</p>
-            <hr>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <span class="fa fa-user"></span>
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" name="fname" placeholder="First Name" required="required">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <span class="fa fa-user"></span>
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" name="lname" placeholder="Last Name" required="required">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <span class="fa fa-user"></span>
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" name="username" placeholder="Username" required="required">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa fa-paper-plane"></i>
-                        </span>
-                    </div>
-                    <input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa fa-lock"></i>
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" name="password" placeholder="Password" required="required">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa fa-lock"></i>
-                            <i class="fa fa-check"></i>
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="termsofuse.php">Terms of Use</a> &amp; <a href="privacy.php">Privacy Policy</a></label>
-            </div>
-            <div class="form-group">
-                <button type="submit" name="registration" class="btn btn-primary btn-lg">Sign Up</button>
-            </div>
-        </form>
-        <div class="text-center">Already have an account? <a href="login.php">Login Here</a></div>
-    </div>
+    <?php
+    require('db.php');
+    // If form submitted, insert values into the database.
+    if (isset($_REQUEST['username'])) {
+        // removes backslashes
+        $username = stripslashes($_REQUEST['username']);
+        //escapes special characters in a string
+        $username = mysqli_real_escape_string($con, $username);
+        $email = stripslashes($_REQUEST['email']);
+        $email = mysqli_real_escape_string($con, $email);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
+        $trn_date = date("Y-m-d H:i:s");
+        $query = "INSERT into `users` (username, password, email, trn_date)
+VALUES ('$username', '" . md5($password) . "', '$email', '$trn_date')";
+        $result = mysqli_query($con, $query);
+        if ($result) {
+            echo "<div class='form'>
+<h3>You are registered successfully.</h3>
+<br/>Click here to <a href='login.php'>Login</a></div>";
+        }
+    } else {
+    ?>
+        <div class="form">
+            <h1>Registration</h1>
+            <form name="registration" action="" method="post">
+                <input type="text" name="username" placeholder="Username" required />
+                <input type="email" name="email" placeholder="Email" required />
+                <input type="password" name="password" placeholder="Password" required />
+                <input type="submit" name="submit" value="Register" />
+            </form>
+            <p>Already a member? <a href='login.php'>Click Here to Login</a></p>
+        </div>
+    <?php } ?>
+
+
+
+    <!-- Menu -->
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
 </body>
 
 </html>
-
-<?php include "footer.php"; ?>
+<br>

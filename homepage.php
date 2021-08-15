@@ -13,7 +13,7 @@ include "header.php"; ?>
 <title>Home Page</title>
 
 <style>
-    .container {
+    .container-sm {
         max-width: 1500px;
         margin: auto;
         padding-left: 20px;
@@ -190,6 +190,17 @@ include "header.php"; ?>
         color: #555;
         font-size: 24px;
     }
+
+    /* text on image */
+    .centered {
+        color: #fff;
+        font-size: 40px;
+        font-weight: 450;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-70%, -40%);
+    }
 </style>
 
 
@@ -229,17 +240,21 @@ include "header.php"; ?>
 
     <div class="categories">
         <div class="container-sm">
+
             <div class="row">
                 <div class="col-3">
                     <img src="images/category-1.jpg" width="80%">
+                    <div class="centered">Computers</div>
                 </div>
 
                 <div class="col-3">
                     <img src="images/category-2.jpg" width="80%">
+                    <div class="centered">Large Appliances</div>
                 </div>
 
                 <div class="col-3">
                     <img src="images/category-3.jpg" width="80%">
+                    <div class="centered">Furniture</div>
                 </div>
 
             </div>
@@ -256,9 +271,7 @@ include "header.php"; ?>
             <div class="col-4">
                 <a href="product-details.html"><img src="images/product-1.png"></a>
                 <a href="product-details.html">
-                    <h4>SAMSUNG Galaxy S20 FE 5G Factory Unlocked Android Cell Phone 128GB US Version Smartphone
-                        Pro-Grade
-                        Camera 30X Space Zoom Night Mode, Cloud Navy</h4>
+                    <h4>SAMSUNG Galaxy S20 FE 5G Factory Unlocked Android Cell Phoney</h4>
                 </a>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -272,7 +285,7 @@ include "header.php"; ?>
             <div class="col-4">
                 <a href="product-details.html"><img src="images/product-2.png"></a>
                 <a href="product-details.html">
-                    <h4>LG 65NANO80UPA Alexa Built-in NanoCell 80 Series 65" 4K Smart UHD NanoCell TV (2021)</h4>
+                    <h4>LG 65" 4K Smart UHD NanoCell TV (2021)</h4>
                 </a>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -286,8 +299,7 @@ include "header.php"; ?>
             <div class="col-4">
                 <a href="product-details.html"><img src="images/product-3-1.png"></a>
                 <a href="product-details.html">
-                    <h4>HONBAY Reversible Sectional Sofa Couch Set L Shaped Couch Sofa Sets for Living Room 4 Seat Sofa
-                        Sectional with Storage Ottoman for Small Apartment,Grey (Sectional+Tray Ottoman)</h4>
+                    <h4>HONBAY Reversible Sectional Sofa Couch Set</h4>
                 </a>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -301,8 +313,7 @@ include "header.php"; ?>
             <div class="col-4">
                 <a href="product-details.html"><img src="images/product-4-1.png"></a>
                 <a href="product-details.html">
-                    <h4>Frigidaire EFR751, 2 Door Apartment Size Refrigerator with Freezer, 7.2 cu ft, Platinum Series,
-                        Stainless steel, 7.5</h4>
+                    <h4>Frigidaire EFR751, 2 Door Apartment Size Refrigerator</h4>
                 </a>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -324,9 +335,7 @@ include "header.php"; ?>
         <div class="col-4">
             <a href="product-details.html"><img src="images/product-5.jpg"></a>
             <a href="product-details.html">
-                <h4>Frigidaire FFEF3054TS 30 Inch Electric Freestanding Range with 5 Elements, Smoothtop Cooktop,
-                    5.3
-                    cu. ft. Primary Oven Capacity, in Stainless Steel</h4>
+                <h4>Frigidaire FFEF3054TS 30 Inch Electric Freestanding Range</h4>
             </a>
             <div class="rating">
                 <i class="fa fa-star"></i>
@@ -340,7 +349,7 @@ include "header.php"; ?>
         <div class="col-4">
             <a href="product-details.html"><img src="images/product-6.jpg"></a>
             <a href="product-details.html">
-                <h4>Cuisinart TOA-60BKS Convection Toaster Oven Airfryer, Black Stainless Steel</h4>
+                <h4>Cuisinart TOA-60BKS Convection Toaster Oven Airfryer</h4>
                 <div class="rating">
             </a>
             <i class="fa fa-star"></i>
@@ -368,8 +377,7 @@ include "header.php"; ?>
     <div class="col-4">
         <a href="product-details.html"><img src="images/product-8.jpg"></a>
         <a href="product-details.html">
-            <h4>Decok Vanity Desk with 5 Drawers & Cushioned Stool, Black Makeup Vanity with Adjustable HD Mirror &
-                Removable Makeup Organizer, for Corner Bedroom</h4>
+            <h4>Decok Vanity Desk with 5 Drawers & Cushioned Stool</h4>
         </a>
         <div class="rating">
             <i class="fa fa-star"></i>
@@ -460,6 +468,21 @@ include "header.php"; ?>
     </div>
 
 
+    <!-- Menu -->
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
 
 
 </body>

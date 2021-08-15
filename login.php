@@ -1,49 +1,3 @@
-<?php
-session_start();
-
-if (isset($_POST["login"])) {
-
-    echo "you clicked a button";
-
-    include "connection.php";
-
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-
-    $sql = "SELECT * FROM `users` WHERE email = '$email'";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0) {
-        // output data of each row
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo "Found email";
-
-            $db_password = $row["password"];
-
-            if (password_verify($password, $db_password)) {
-                echo "Password Correct";
-            } else {
-
-                echo "Password Incorrect Try again";
-            }
-
-            $fullname = "Z Howe";
-            $_SESSION["user_id"] = $row["user_id"];
-            $_SESSION["first_name"] = $row["first_name"];
-            $_SESSION["last_name"] = $row["last_name"];
-            $_SESSION["email"] = $row["email"];
-            $_SESSION["user_type"] = $row["user_type"];
-
-
-            //header("location: homepage.php");
-        }
-    } else {
-        echo "No email found";
-    }
-}
-
-include "header.php"; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,132 +14,107 @@ include "header.php"; ?>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <style>
         body {
-            color: #999;
-            background: #19aa8d;
-            font-family: 'Varela Round', sans-serif;
+            font-family: Arial, Sans-Serif;
         }
 
-        .form-control {
-            box-shadow: none;
-            border-color: #ddd;
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
         }
 
-        .form-control:focus {
-            border-color: #4aba70;
+        .clearfix:after {
+            clear: both;
         }
 
-        .login-form {
-            width: 350px;
+        a {
+            color: #0067ab;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .form {
+            width: 300px;
             margin: 0 auto;
-            padding: 30px 0;
         }
 
-        .login-form form {
-            color: #434343;
-            border-radius: 1px;
-            margin-bottom: 15px;
-            background: #fff;
-            border: 1px solid #f3f3f3;
-            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-            padding: 30px;
-        }
-
-        .login-form h4 {
-            text-align: center;
-            font-size: 22px;
-            margin-bottom: 20px;
-        }
-
-        .login-form .avatar {
-            color: #fff;
-            margin: 0 auto 30px;
-            text-align: center;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            z-index: 9;
-            background: #4aba70;
-            padding: 15px;
-            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .login-form .avatar i {
-            font-size: 62px;
-        }
-
-        .login-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .login-form .form-control,
-        .login-form .btn {
-            min-height: 40px;
+        input[type='text'],
+        input[type='email'],
+        input[type='password'] {
+            width: 200px;
             border-radius: 2px;
-            transition: all 0.5s;
+            border: 1px solid #CCC;
+            padding: 10px;
+            color: #333;
+            font-size: 14px;
+            margin-top: 10px;
         }
 
-        .login-form .close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
+        input[type='submit'] {
+            padding: 10px 25px 8px;
+            color: #fff;
+            background-color: #0067ab;
+            text-shadow: rgba(0, 0, 0, 0.24) 0 1px 0;
+            font-size: 16px;
+            box-shadow: rgba(255, 255, 255, 0.24) 0 2px 0 0 inset, #fff 0 1px 0 0;
+            border: 1px solid #0164a5;
+            border-radius: 2px;
+            margin-top: 10px;
+            cursor: pointer;
         }
 
-        .login-form .btn,
-        .login-form .btn:active {
-            background: #4aba70 !important;
-            border: none;
-            line-height: normal;
-        }
-
-        .login-form .btn:hover,
-        .login-form .btn:focus {
-            background: #42ae68 !important;
-        }
-
-        .login-form .checkbox-inline {
-            float: left;
-        }
-
-        .login-form input[type="checkbox"] {
-            position: relative;
-            top: 2px;
-        }
-
-        .login-form .forgot-link {
-            float: right;
-        }
-
-        .login-form .small {
-            font-size: 13px;
-        }
-
-        .login-form a {
-            color: #4aba70;
+        input[type='submit']:hover {
+            background-color: #024978;
         }
     </style>
 </head>
 
 <body>
-    <div class="login-form">
-        <form action="homepage.php" method="post">
-            <div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
-            <h4 class="modal-title">Login to Your Account</h4>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Username" required="required">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password" required="required">
-            </div>
-            <div class="form-group small clearfix">
-                <label class="form-check-label"><input type="checkbox"> Remember me</label>
-                <a href="#" class="forgot-link">Forgot Password?</a>
-            </div>
-            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
-        </form>
-        <div class="text-center small">Don't have an account? <a href="registration.php">Sign up</a></div>
-    </div>
+    <?php
+    session_start();
+    require('db.php');
+
+    ?>
+
+    <?php
+    // If form submitted, insert values into the database.
+    if (isset($_POST['username'])) {
+        // removes backslashes
+        $username = stripslashes($_REQUEST['username']);
+        //escapes special characters in a string
+        $username = mysqli_real_escape_string($con, $username);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
+        //Checking is user existing in the database or not
+        $query = "SELECT * FROM `users` WHERE username='$username'
+and password='" . md5($password) . "'";
+        $result = mysqli_query($con, $query) or die(mysqli_connect_error());
+        $rows = mysqli_num_rows($result);
+        if ($rows == 1) {
+            $_SESSION['username'] = $username;
+            // Redirect user to index.php
+            header("Location: index.php");
+        } else {
+            echo "<div class='form'>
+<h3>Username/password is incorrect.</h3>
+<br/>Click here to <a href='login.php'>Login</a></div>";
+        }
+    } else {
+    ?>
+        <div class="form">
+            <h1>Log In</h1>
+            <form action="" method="post" name="login">
+                <input type="text" name="username" placeholder="Username" required />
+                <input type="password" name="password" placeholder="Password" required /> <br>
+                <input name="submit" type="submit" value="Login" />
+            </form>
+            <p>Not registered yet? <a href='registration.php'>Register Here</a></p>
+        </div>
+    <?php }
+    ?>
 </body>
 
 </html>
-
-<?php include "footer.php"; ?>

@@ -14,7 +14,7 @@
 </head>
 
 <style>
-    .container-sm {
+    .container {
         max-width: 100%;
         margin: auto;
         padding-left: 25px;
@@ -117,6 +117,14 @@
     .col-5 img:hover {
         filter: grayscale(0);
     }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
 </style>
 
 
@@ -125,7 +133,7 @@
     <!-- Brands -->
 
     <div class="brands">
-        <div class="container-sm">
+        <div class="container">
             <div class="row">
                 <div class="col-5">
                     <img src="images/logo-2.png">
@@ -142,7 +150,6 @@
                 <div class="col-5">
                     <img src="images/logo-6.png">
                 </div>
-
             </div>
         </div>
     </div>
@@ -159,7 +166,7 @@
                     </div>
                 </div>
                 <div class="footer-col-2">
-                    <img src="images/logo-white.png">
+                    <a href="homepage.php"><img src="images/logo.png" width="150px"></a>
                     <p>We Work Towards Providing The Best Products And Customer Service Affordable!</p>
                 </div>
                 <div class="footer-col-3">
@@ -185,6 +192,7 @@
             <p class="copyright">Copyright 2021 - Randall Howe SN2018271</p>
         </div>
     </div>
+
 </body>
 
 </html>

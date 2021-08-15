@@ -6,6 +6,6 @@ session_unset();
 // destroy the session
 session_destroy();
 
-header("location: login.php");
+header("location: homepage.php");
 
 exit();
