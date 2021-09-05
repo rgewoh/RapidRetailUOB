@@ -2,7 +2,8 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "rhecommerce_project";
+$dbname = "rapidretail";
+//$dbname = "template";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);

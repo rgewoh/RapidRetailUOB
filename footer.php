@@ -130,29 +130,6 @@
 
 <body>
 
-    <!-- Brands -->
-
-    <div class="brands">
-        <div class="container">
-            <div class="row">
-                <div class="col-5">
-                    <img src="images/logo-2.png">
-                </div>
-                <div class="col-5">
-                    <img src="images/logo-3.png">
-                </div>
-                <div class="col-5">
-                    <img src="images/logo-4.png">
-                </div>
-                <div class="col-5">
-                    <img src="images/logo-5.png">
-                </div>
-                <div class="col-5">
-                    <img src="images/logo-6.png">
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="footer">
         <div class="container">
@@ -161,12 +138,12 @@
                     <h3>Download Our App</h3>
                     <p>App Available for Android and IOS.</p>
                     <div class="app-logo">
-                        <img src="images/playstore.png">
-                        <img src="images/appstore.png">
+                        <a href="https://play.google.com/store/movies"><img src="images/playstore.png"></a>
+                        <a href="https://www.apple.com/lae/app-store/"><img src="images/appstore.png"></a>
                     </div>
                 </div>
                 <div class="footer-col-2">
-                    <a href="homepage.php"><img src="images/logo.png" width="150px"></a>
+                    <a href="homepage.php"><img src="images/logo-white.png" width="150px"></a>
                     <p>We Work Towards Providing The Best Products And Customer Service Affordable!</p>
                 </div>
                 <div class="footer-col-3">
@@ -181,10 +158,18 @@
                 <div class="footer-col-3">
                     <h3>Follow Us</h3>
                     <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Instagram</li>
-                        <li>YouTube</li>
+                        <a href="https://www.facebook.com/">
+                            <li>Facebook</li>
+                        </a>
+                        <a href="https://twitter.com/?lang=en">
+                            <li>Twitter</li>
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <li>Instagram</li>
+                        </a>
+                        <a href="https://www.youtube.com/">
+                            <li>YouTube</li>
+                        </a>
                     </ul>
                 </div>
             </div>

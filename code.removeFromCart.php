@@ -1,23 +1,31 @@
-<?php 
+<?php
+session_start();
 
-session_start ();
 
+include "code.isLoggedIn.php";
 
 if (isset($_GET["id"])) {
-    $prod_id = $_GET["id"];
+    $cart_id = $_GET["id"];
 } else {
-    echo "no id in the url";
+    echo "No ID in the url";
     exit();
 }
 
-include "connection.php";
-include "code.isLoggedIn.php";
 
-    // sql to delete a record
-$sql = "DELETE FROM `cart` WHERE `cart`.`cart_id` = $prod_id";
+include "connection.php";
+
+
+// sql to delete a record
+$sql = "DELETE FROM `cart` WHERE `cart`.`cart_id` = $cart_id";
+
+//echo "$sql";
 
 if (mysqli_query($conn, $sql)) {
-  echo "Record deleted successfully";
+    echo "Record deleted successfully";
 } else {
-  echo "Error deleting record: " . mysqli_error($conn);
+    echo "Error deleting record: " . mysqli_error($conn);
 }
+
+
+header("location: cart.php"); //redirect the user to another page
+exit();

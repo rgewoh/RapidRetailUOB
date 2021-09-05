@@ -1,15 +1,20 @@
 <?php
-
 session_start();
 
+
 if (isset($_SESSION["user_id"])) {
+
     $first_name = $_SESSION["first_name"];
     $last_name = $_SESSION["last_name"];
 
-    echo "Welcome $first_name $last_name";
+
+    echo "$first_name $last_name";
+} else {
+    echo "Please Log In";
 }
 
 include "header.php"; ?>
+
 <title>Home Page</title>
 
 <style>
@@ -227,7 +232,7 @@ include "header.php"; ?>
         <div class="col-2">
             <h1>Get the Best Buys Here!</h1>
             <p> You buy it we deliver it in no matter the timeframe needed!</p>
-            <a href="login.php" class="btn">Explore Now &#8594;</a>
+            <a href="store.php" class="btn">Explore Now &#8594;</a>
         </div>
 
         <div class="col-2">
@@ -269,8 +274,8 @@ include "header.php"; ?>
         <h2 class="title">Featured Products</h2>
         <div class="row">
             <div class="col-4">
-                <a href="product-details.html"><img src="images/product-1.png"></a>
-                <a href="product-details.html">
+                <a href="details.php"><img src="images/product-1.png"></a>
+                <a href="details.php">
                     <h4>SAMSUNG Galaxy S20 FE 5G Factory Unlocked Android Cell Phoney</h4>
                 </a>
                 <div class="rating">
@@ -283,8 +288,8 @@ include "header.php"; ?>
                 <p>$5479.00</p>
             </div>
             <div class="col-4">
-                <a href="product-details.html"><img src="images/product-2.png"></a>
-                <a href="product-details.html">
+                <a href="details.php"><img src="images/product-2.png"></a>
+                <a href="details.php">
                     <h4>LG 65" 4K Smart UHD NanoCell TV (2021)</h4>
                 </a>
                 <div class="rating">
@@ -297,8 +302,8 @@ include "header.php"; ?>
                 <p>$3599.00</p>
             </div>
             <div class="col-4">
-                <a href="product-details.html"><img src="images/product-3-1.png"></a>
-                <a href="product-details.html">
+                <a href="details.php"><img src="images/product-3-1.png"></a>
+                <a href="details.php">
                     <h4>HONBAY Reversible Sectional Sofa Couch Set</h4>
                 </a>
                 <div class="rating">
@@ -311,8 +316,8 @@ include "header.php"; ?>
                 <p>$7999.00</p>
             </div>
             <div class="col-4">
-                <a href="product-details.html"><img src="images/product-4-1.png"></a>
-                <a href="product-details.html">
+                <a href="details.php"><img src="images/product-4-1.png"></a>
+                <a href="details.php">
                     <h4>Frigidaire EFR751, 2 Door Apartment Size Refrigerator</h4>
                 </a>
                 <div class="rating">
@@ -333,8 +338,8 @@ include "header.php"; ?>
     <h2 class="title">Latest Products</h2>
     <div class="row">
         <div class="col-4">
-            <a href="product-details.html"><img src="images/product-5.jpg"></a>
-            <a href="product-details.html">
+            <a href="details.php"><img src="images/product-5.png"></a>
+            <a href="details.php">
                 <h4>Frigidaire FFEF3054TS 30 Inch Electric Freestanding Range</h4>
             </a>
             <div class="rating">
@@ -347,8 +352,8 @@ include "header.php"; ?>
             <p>$8999.00</p>
         </div>
         <div class="col-4">
-            <a href="product-details.html"><img src="images/product-6.jpg"></a>
-            <a href="product-details.html">
+            <a href="details.php"><img src="images/product-6.png"></a>
+            <a href="details.php">
                 <h4>Cuisinart TOA-60BKS Convection Toaster Oven Airfryer</h4>
                 <div class="rating">
             </a>
@@ -361,8 +366,8 @@ include "header.php"; ?>
         <p>$1399.00</p>
     </div>
     <div class="col-4">
-        <a href="product-details.html"><img src="images/product-7.jpg"></a>
-        <a href="product-details.html">
+        <a href="details.php"><img src="images/product-7.png"></a>
+        <a href="details.php">
             <h4>Sauder Palladia Armoire, Select Cherry finish</h4>
         </a>
         <div class="rating">
@@ -375,8 +380,8 @@ include "header.php"; ?>
         <p>$2199.00</p>
     </div>
     <div class="col-4">
-        <a href="product-details.html"><img src="images/product-8.jpg"></a>
-        <a href="product-details.html">
+        <a href="details.php"><img src="images/product-8.jpg"></a>
+        <a href="details.php">
             <h4>Decok Vanity Desk with 5 Drawers & Cushioned Stool</h4>
         </a>
         <div class="rating">
@@ -467,22 +472,6 @@ include "header.php"; ?>
         </div>
     </div>
 
-
-    <!-- Menu -->
-
-    <script>
-        var MenuItems = document.getElementById("MenuItems");
-
-        MenuItems.style.maxHeight = "0px";
-
-        function menutoggle() {
-            if (MenuItems.style.maxHeight == "0px") {
-                MenuItems.style.maxHeight = "200px";
-            } else {
-                MenuItems.style.maxHeight = "0px";
-            }
-        }
-    </script>
 
 
 </body>
